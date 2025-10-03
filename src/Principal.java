@@ -1,13 +1,61 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
 
     public static void main(String[] args) {
+
+
+
+        Estudante estudante1 = new Estudante();
+        estudante1.nome = "Rodrigo";
+
+        Estudante estudante2 = new Estudante();
+        estudante2.nome = "Ana";
+
+        Estudante estudante3 = new Estudante();
+        estudante3.nome = "Pedro";
+
+        ArrayList lista = new ArrayList<Estudante>();
+        lista.add(estudante1);
+        lista.add(estudante2);
+        lista.add(estudante3);
+
+        Turma turma1 = new Turma();
+        turma1.codigo = "T01";
+        turma1.estudantes = new ArrayList<Estudante>();
+        turma1.estudantes.add(estudante1);
+        turma1.estudantes.add(estudante2);
+        turma1.estudantes.add(estudante3);
+
+        for (Estudante estudante : turma1.estudantes) {
+            System.out.println(estudante.nome);
+        }
+
+        /*
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+        lista.add(10);
+        lista.add(15);
+        lista.add(1200);
+        lista.add(131313);
+        lista.add(0);
+        lista.add(4);
+
+        //lista.remove(3);
+
+        System.out.println(lista.get(3));
+
+        for (int numero : lista) {
+            System.out.println(numero);
+        }
+
+        /*
         System.out.println("Cadastro de estudantes");
         Scanner leitor = new Scanner(System.in);
 
         System.out.println("Digite o número de estudantes para cadastrar:");
         int qtdEstudantes = Integer.parseInt(leitor.nextLine());
+
         Estudante[] estudantes = new Estudante[qtdEstudantes];
 
         int qtdCadastrados = 0;
