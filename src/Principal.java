@@ -7,8 +7,8 @@ public class Principal {
         Scanner leitor = new Scanner(System.in);
 
         System.out.println("Digite o número de estudantes para cadastrar:");
-        int qtdEstudantes = leitor.nextInt();
-        Estudante estudantes = new Estudante[qtdEstudantes];
+        int qtdEstudantes = Integer.parseInt(leitor.nextLine());
+        Estudante[] estudantes = new Estudante[qtdEstudantes];
 
         int qtdCadastrados = 0;
         while (qtdCadastrados != qtdEstudantes) {
@@ -26,13 +26,15 @@ public class Principal {
         System.out.println("Digite o responsável do estudante");
         estudante.responsavel = leitor.nextLine();
 
-        System.out.println("Deseja cadastrar outro? (digite 1 para sim e 0 para não)");
-
-
         estudantes[qtdCadastrados] = estudante;
         qtdCadastrados++;        
+    }
 
-
+    for(Estudante e : estudantes) {
+        System.out.println("Nome: " +e.nome);
+        System.out.println("Telefone: " +e.telefone);
+        System.out.println("Endereço: " +e.endereco);
+        System.out.println("Responsável: " +e.responsavel);
     }
 
         /*
